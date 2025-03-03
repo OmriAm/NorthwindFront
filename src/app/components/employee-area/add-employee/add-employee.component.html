@@ -1,0 +1,19 @@
+<div>
+
+    <p>(Reactive Form)</p>
+
+    <form [formGroup]="employeeForm" (submit)="send()">
+
+        <label>Name: </label>
+        <input type="text" formControlName="nameControl">
+        <span *ngIf="employeeForm.controls['nameControl'].errors?.['required'] && employeeForm.controls['nameControl'].touched">Missing name.</span>
+        <span *ngIf="employeeForm.controls['nameControl'].errors?.['minlength'] && employeeForm.controls['nameControl'].touched">Name too short.</span>
+        <span *ngIf="employeeForm.controls['nameControl'].errors?.['maxlength'] && employeeForm.controls['nameControl'].touched">Name too long.</span>
+        <span *ngIf="employeeForm.controls['nameControl'].errors?.['extraSpacing'] && employeeForm.controls['nameControl'].touched">Extra spacing forbidden.</span>
+
+
+        <button [disabled]="employeeForm.invalid">Add</button>
+
+    </form>
+
+</div>

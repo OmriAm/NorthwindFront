@@ -1,0 +1,11 @@
+<div *ngIf="employee">
+    <h3> {{employee.firstName + " " + employee.lastName}}</h3>
+    <h3> {{employee.title}}</h3>
+    <h3> {{ employee.birthday | date:'dd/MM/yyyy'}}</h3>
+    <h3> {{employee.city}}</h3>
+    <h3> {{employee.country}}</h3>
+    <h3><img [src]="employee.imageUrl"></h3>
+    <br><br>
+    <a routerLink="/employees">Back</a>
+</div>
+

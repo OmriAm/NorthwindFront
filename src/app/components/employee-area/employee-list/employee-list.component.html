@@ -1,0 +1,30 @@
+<div>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Birthday</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+                @for (e of employees; track e.id) {
+                    <tr (click)="displayDetails(e.id)">
+                        <td> {{e.firstName + " " + e.lastName}}</td>
+                        <td> {{e.title}}</td>
+                        <td> {{ e.birthday | date:"MMMM yyyy"}}</td>
+                        <td> {{e.city}}</td>
+                        <td> {{e.country}}</td>
+                        <td><img [src]="e.imageUrl"></td>
+                    </tr>
+                    
+                }
+        </tbody>
+
+    </table>
+
+</div>
